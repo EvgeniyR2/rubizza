@@ -1,0 +1,35 @@
+
+<h2>Отправить письмо на почту</h2>
+
+<div id='results'>hi</div>>
+
+<button onclick="foo2()">Нажми меня!</button>
+
+<script>
+  function foo() {
+  	Rails.ajax({
+	  url: "https://spb.rubizza.com/register",
+	  type: "POST",
+	  data: "first_name=Ricky&last_name=Bobby",
+	  success: function(data) {
+	    console.log(data);
+	  }
+	});
+  }
+  
+  function foo2() {
+  	$.ajax
+    ({
+        type: "POST",
+        //the url where you want to sent the userName and password to
+        url: 'https://spb.rubizza.com/register',
+        dataType: 'json',
+        //json object to sent to the authentication url
+        data: '{:secret_code: "8N3pGY8", :token: "hello"}',
+        success: function (data) {
+
+        alert("Thanks!"); 
+        }
+    })	
+  }
+</script>
